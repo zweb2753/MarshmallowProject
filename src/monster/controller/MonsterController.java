@@ -8,6 +8,6 @@ public class MonsterController
 	{
 		MarshmallowMonster sample = new MarshmallowMonster();
 		System.out.println(sample);
-		MarshmallowMonster realMonster = new MarshmallowMonster("Scary" , 4, 6, 6.0, false);
+		MarshmallowMonster realMonster = new MarshmallowMonster("Scary" , 4, 6, 5.0, false);
 	}
 }
