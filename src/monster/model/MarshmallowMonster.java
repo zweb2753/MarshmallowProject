@@ -59,12 +59,12 @@ public class MarshmallowMonster
 		this.eyeCount = eyeCount;
 	}
 	
-	public void setArmCount(int aarmCount)
+	public void getArmCount(int armCount)
 	{
 		this.armCount = armCount;
 	}
 	
-	public void setTentcleAmount(double tentacleAmount)
+	public void setTentacleAmount(double tentacleAmount)
 	{
 		this.tentacleAmount = tentacleAmount;
 	}
