@@ -24,11 +24,40 @@ public class MonsterController
 	{
 		System.out.println(currentMonster.getName() + " wants to know what to eat next");
 		System.out.println(currentMonster.getName() + " suggests arms, they have " + currentMonster.getArmCount());
-		Scanner myScanneer = new Scanner(System.in);
+		Scanner myScanner = new Scanner(System.in);
 		System.out.println("How many do you want to eat?");
 		int consumed = myScanner.nextInt();
-		currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
-		System.out.println("ok, now " + currentMonster.getName() + " has " + currentMonster.getArmCount() +  " arms left.");
 		
+		if (consumed < 1)
+		{
+			System.out.println("you cant eat a negtive amount");
+		}
+		else if (consumed == 0)
+		{
+			System.out.println("Not that hungry are you");
+		}
+		else if (consumed > currentMonster.getArmCount())
+		{
+			System.out.println("that is impossible i only have " + currentMonster.getArmCount() + " arms!!");
+		}
+		else
+		{
+			currentMonster.setArmCount(currentMonster.getArmCount() - consumed);
+			System.out.println("thanks i only have this many arms left" + currentMonster.getArmCount());
+		}
+		
+		if (consumed < 4)
+		{
+			System.out.println("I only have 4 eyes");
+		}
+		else if (consumed == 0)
+		{
+			System.out.println("Guess you dont want my eyes");
+		}
+		else 
+		{
+			currentMonster.setEyeCount(- consumed);
+			System.out.println("Now i only have" + currentMonster.getEyeCount());
+		}
 	}
 }

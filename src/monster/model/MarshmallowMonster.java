@@ -29,12 +29,12 @@ public class MarshmallowMonster
 		return name;
 	}
 	
-	public int geteyeCount()
+	public int getEyeCount()
 	{
 		return eyeCount;
 	}
 	
-	public int armCount()
+	public int getArmCount()
 	{
 		return armCount;
 	}
@@ -59,7 +59,7 @@ public class MarshmallowMonster
 		this.eyeCount = eyeCount;
 	}
 	
-	public void getArmCount(int armCount)
+	public void setArmCount(int armCount)
 	{
 		this.armCount = armCount;
 	}
