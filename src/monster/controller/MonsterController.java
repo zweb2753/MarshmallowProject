@@ -46,6 +46,8 @@ public class MonsterController
 			System.out.println("thanks i only have this many arms left" + currentMonster.getArmCount());
 		}
 		
+		System.out.println(currentMonster.getName() + " suggests eyes, they have " + currentMonster.getEyeCount());
+		
 		if (consumed < 4)
 		{
 			System.out.println("I only have 4 eyes");
