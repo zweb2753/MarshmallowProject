@@ -8,16 +8,16 @@ public class MonsterController
 {
 	public void start()
 	{
-//		MarshmallowMonster sample = new MarshmallowMonster();
-//		System.out.println(sample);
-//		MarshmallowMonster realMonster = new MarshmallowMonster("Scary" , 4, 6, 5.0, false);
-//		
-//		System.out.println(realMonster);
-//		System.out.println("Zane is huungry, so he is going to at a tentacle");
-//		realMonster.setTentacleAmount(4.0);
-//		System.out.println(realMonster);
-//		
-//		interactWithTheMonster(realMonster);
+		MarshmallowMonster sample = new MarshmallowMonster();
+		System.out.println(sample);
+		MarshmallowMonster realMonster = new MarshmallowMonster("Scary" , 4, 6, 5.0, false);
+		
+		System.out.println(realMonster);
+		System.out.println("Zane is huungry, so he is going to at a tentacle");
+		realMonster.setTentacleAmount(4.0);
+		System.out.println(realMonster);
+		
+		interactWithTheMonster(realMonster);
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
