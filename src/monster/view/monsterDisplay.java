@@ -1,5 +1,23 @@
 package monster.view;
 
-public class monsterDisplay {
+import javax.swing.JOptionPane;
 
+public class monsterDisplay 
+{
+
+	
+	public void displayText(String textToDisplay)
+	{
+		JOptionPane.showMessageDialog(null,  textToDisplay);
+	}
+	
+	public String getResponse(String textToDisplay)
+	{
+		String response = "";
+		
+		response += JOptionPane.showInputDialog(null, textToDisplay);
+		
+		return response;
+	}
+	
 }

@@ -67,6 +67,12 @@ public class MonsterController
 		{
 			currentMonster.setEyeCount(- consumed);
 			System.out.println("Now i only have" + currentMonster.getEyeCount());
+			
+			popup.displayText("Hey look at me!!!");
+			String answer = popup.getResponse("how many meals are you eating today");
+			System.out.println(answer);
+			popup.displayText(answer);
+			
 		}
 	}
 }
