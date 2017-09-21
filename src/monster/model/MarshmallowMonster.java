@@ -17,13 +17,14 @@ public class MarshmallowMonster
 	
 	public MarshmallowMonster(String name, int eyeCount, int arms, double tentaleCount, boolean hasBoop)
 	{
+		//assigning names
 		this.name = name;
 		this.eyeCount = eyeCount;
 		this.armCount = arms;
 		this.tentacleAmount = tentacleAmount;
 		this.hasBloop = hasBloop;
 	}
-	
+	//more assigning names
 	public String getName()
 	{
 		return name;
@@ -77,6 +78,7 @@ public class MarshmallowMonster
 	
 	public String toString()
 	{
+		//returns all the descriptions and diplays them
 		String description = "Hi, I am a scary monster! My name is " + name + " and I have " + eyeCount;
 		description += " eyes and i have " + armCount + " arms, and i have " + tentacleAmount + " tentacles";
 		description += " and my bloop existence is " + hasBloop;

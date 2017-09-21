@@ -1,7 +1,8 @@
+//package name
 package monster.view;
-
+//imports java options
 import javax.swing.JOptionPane;
-
+//class name
 public class monsterDisplay 
 {
 

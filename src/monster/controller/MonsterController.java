@@ -1,3 +1,4 @@
+//package name
 package monster.controller;
 
 import monster.model.MarshmallowMonster;
@@ -15,8 +16,10 @@ public class MonsterController
 	
 	public void start()
 	{
+		//makes a new marshmallow monster
 		MarshmallowMonster sample = new MarshmallowMonster();
 		//System.out.println(sample);
+		//makes a popup to display text
 		popup.displayText(sample.toString());
 		MarshmallowMonster realMonster = new MarshmallowMonster("Scary" , 4, 6, 5.0, false);
 		
@@ -39,10 +42,10 @@ public class MonsterController
 		popup.displayText(currentMonster.getName() + "suggests arms, they have " + currentMonster.getArmCount());
 		Scanner myScanner = new Scanner(System.in);
 		//System.out.println("How many do you want to eat?");
-		int specialAnswer;
+		int specialAnswer = 0;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
-		//if (isValidInteger(unconverted));
+		if (isValidInteger(unconverted));
 		{
 			specialAnswer = Integer.parseInt(unconverted);
 		}
@@ -50,10 +53,10 @@ public class MonsterController
 		
 		
 		int consumed = myScanner.nextInt();
-		
+		consumed = specialAnswer;
 		if (consumed < 1)
 		{
-			//System.out.println("you cant eat a negative amount");
+			//System.out.println("you can't eat a negative amount");
 			popup.displayText("You cant at a negative amount");
 		}
 		else if (consumed == 0)
@@ -88,16 +91,18 @@ public class MonsterController
 		}
 		else 
 		{
+			//gets the current monster and subtracts the consumed
 			currentMonster.setEyeCount(- consumed);
+			//prints out the message and then gets the eye count and displays it
 			System.out.println("Now i only have" + currentMonster.getEyeCount());
-			
+			//displays the message
 			popup.displayText("Hey look at me!!!");
 			String answer = popup.getResponse("how many meals are you eating today");
 			System.out.println(answer);
 			popup.displayText(answer);
-			
+	
 			//helper methods
-			private boolean isValidInteger(String sample);
+			private boolean isValidInteger(String sample)
 			{
 				boolean valid = false;
 				
@@ -106,6 +111,7 @@ public class MonsterController
 					Integer.parseInt(sample);
 					valid = true;
 				}
+				//catches format error
 			catch (NumberFormatException error)
 				{
 				popup.displayText("Only int values are valid");
@@ -123,13 +129,32 @@ public class MonsterController
 				Double.parseDouble(sampleDouble);
 				valid = true;
 			}
+			//catches format error
 			catch (NumberFormatException error)
 			{
+				//displays the message
 				popup.displayText("Only double values are valid: " +sampleDouble + " is not.");
 			}
 	      
 			return valid;
+		}
+		
+		private boolean isValidBoolean(String sampBoolean)
+		{
+			boolean valid = false;
+			
+			try
+			{
+				Boolean.parseBoolean(sampleBoolean);
+				valid = true;
 			}
+			//catches format errors
+			catch(NumberFormatException error)
+			{
+				//displays the message
+				popup.displayText("Only boolean values are allowed");
+			}
+			
+			return valid;
 		}
 	}
-}
