@@ -42,7 +42,11 @@ public class MonsterController
 		int specialAnswer;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
-		specialAnswer = Integer.parseInt(unconverted);
+		//if (isValidInteger(unconverted));
+		{
+			specialAnswer = Integer.parseInt(unconverted);
+		}
+		specialAnswer = Integer.parseInt(unconverted);   
 		
 		
 		int consumed = myScanner.nextInt();
@@ -92,6 +96,40 @@ public class MonsterController
 			System.out.println(answer);
 			popup.displayText(answer);
 			
+			//helper methods
+			private boolean isValidInteger(String sample);
+			{
+				boolean valid = false;
+				
+				try
+				{
+					Integer.parseInt(sample);
+					valid = true;
+				}
+			catch (NumberFormatException error)
+				{
+				popup.displayText("Only int values are valid");
+				}
+				
+			return valid;
+		}
+		
+		private boolean isValidDouble(String sampleDouble)
+		{
+			boolean valid = false;
+			
+			try
+			{
+				Double.parseDouble(sampleDouble);
+				valid = true;
+			}
+			catch (NumberFormatException error)
+			{
+				popup.displayText("Only double values are valid: " +sampleDouble + " is not.");
+			}
+	      
+			return valid;
+			}
 		}
 	}
 }
