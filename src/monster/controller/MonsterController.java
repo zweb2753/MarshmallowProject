@@ -86,7 +86,7 @@ public class MonsterController
 		}
 		else if (consumed == 0)
 		{
-			//System.out.println("Guess you dont want my eyes");
+			//System.out.println("Guess you don't want my eyes");
 			popup.displayText("guess you dont want eyes");
 		}
 		else 
@@ -100,7 +100,7 @@ public class MonsterController
 			String answer = popup.getResponse("how many meals are you eating today");
 			System.out.println(answer);
 			popup.displayText(answer);
-	
+		    
 			//helper methods
 			private boolean isValidInteger(String sample)
 			{
@@ -139,7 +139,7 @@ public class MonsterController
 			return valid;
 		}
 		
-		private boolean isValidBoolean(String sampBoolean)
+		private boolean isValidBoolean(String sampleBoolean)
 		{
 			boolean valid = false;
 			
