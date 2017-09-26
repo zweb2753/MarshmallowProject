@@ -16,6 +16,19 @@ public class MonsterController
 	
 	public void start()
 	{
+//		boolean finished = true;
+//		int count = 0;
+//		while(finished < 100)
+//		{
+//			popup.displayText("I am so neat!");
+//			count += 1;
+//		}
+		
+//		for(int loop =0; loop < 15; loop += 1)
+//		{
+//			popup.displayText(" i am loping " + (loop + 1) + " times out of 15");
+//		}
+	    
 		//makes a new marshmallow monster
 		MarshmallowMonster sample = new MarshmallowMonster();
 		//System.out.println(sample);
@@ -45,29 +58,40 @@ public class MonsterController
 		int specialAnswer = 0;
 		String unconverted = popup.getResponse("How many do you want to eat?");
 		
-		if (isValidInteger(unconverted));
+		while(isValidInteger(unconverted));
 		{
 			specialAnswer = Integer.parseInt(unconverted);
 		}
 		specialAnswer = Integer.parseInt(unconverted);   
 		
+		while(!isValidInteger(unconverted))
+		{
+			popup.displayText("try again");
+			unconverted = popup.getResponse("Howmany arms????");
+		}
+		
+		while(isValidInteger(unconverted))
+		{
+			specialAnswer = Integer.parseInt(unconverted);
+		}
 		
 		int consumed = myScanner.nextInt();
 		consumed = specialAnswer;
-		if (consumed < 1)
+		while(consumed < 1)
 		{
 			//System.out.println("you can't eat a negative amount");
 			popup.displayText("You cant at a negative amount");
+			unconverted = popup.getResponse("you cant eat a negative amount");
 		}
-		else if (consumed == 0)
+		while(consumed == 0)
 		{
 			//System.out.println("Not that hungry are you");
-			popup.displayText("Not that hungry are you?");
+			unconverted = popup.getResponse("Not that hungry are you?");
 		}
-		else if (consumed > currentMonster.getArmCount())
+		while(consumed > currentMonster.getArmCount())
 		{
 			//System.out.println("that is impossible i only have " + currentMonster.getArmCount() + " arms!!");
-			popup.displayText("That is impossible i only have " + currentMonster.getArmCount() + " arms!!");
+			unconverted = popup.getResponse("That is impossible i only have " + currentMonster.getArmCount() + " arms!!");
 		}
 		else
 		{
@@ -79,15 +103,15 @@ public class MonsterController
 		//System.out.println(currentMonster.getName() + " suggests eyes, they have " + currentMonster.getEyeCount());
 		popup.displayText(currentMonster.getName() + " suggests eyes, theu have " + currentMonster.getEyeCount());
 		
-		if (consumed < 4)
+		while(consumed < 4)
 		{
 			//System.out.println("I only have 4 eyes");
-			popup.displayText("I only have 4 eyes");
+			unconverted = popup.getResponse("I only have 4 eyes");
 		}
-		else if (consumed == 0)
+		while(consumed == 0)
 		{
 			//System.out.println("Guess you don't want my eyes");
-			popup.displayText("guess you dont want eyes");
+			unconverted = popup.getResponse("guess you dont want eyes");
 		}
 		else 
 		{
@@ -100,7 +124,7 @@ public class MonsterController
 			String answer = popup.getResponse("how many meals are you eating today");
 			System.out.println(answer);
 			popup.displayText(answer);
-		    
+	      	
 			//helper methods
 			private boolean isValidInteger(String sample)
 			{
