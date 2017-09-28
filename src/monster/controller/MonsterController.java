@@ -4,14 +4,19 @@ package monster.controller;
 import monster.model.MarshmallowMonster;
 import java.util.Scanner;
 import monster.view.monsterDisplay;
+import java.util.List;
+import java.util.ArrayList;
+
 
 public class MonsterController 
 {
 	private monsterDisplay popup;
+	private List<MarshmallowMonster> monsterList;
 	
 	public MonsterController()
 	{
 		popup = new monsterDisplay();
+		monsterList = new ArrayList<MarshmallowMonster>();
 	}
 	
 	public void start()
@@ -44,7 +49,31 @@ public class MonsterController
 		//System.out.println(realMonster);
 		popup.displayText(realMonster.toString());
 		
+		monsterList.add(realMonster);
+		monsterList.add(sample);
+		testList();
+		
 		interactWithTheMonster(realMonster);
+	}
+	
+	private void testList()
+	{
+		for(int ie = 0; index < monsterList.size(); index++)
+		{
+			MarshmallowMonster currentMonster = monsterList.get(index);
+			popup.displayText(currentMonster.getName());
+			String newName = popup.getResponse("what shold my name be?");
+			currentMonster.setName(newName);
+			popup.displayText(currentMonster.getName());
+		}
+		
+		for(MarshmallowMonster current : monsterList)
+		{
+			popup.displayText(current.getName());
+			String newName = popup.getResponse("what should my new name be?");
+			current.setName(newName);
+			popup.displayText(current.getName());
+		}
 	}
 	
 	private void interactWithTheMonster(MarshmallowMonster currentMonster)
