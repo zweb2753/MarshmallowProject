@@ -58,6 +58,7 @@ public class MonsterController
 	
 	private void testList()
 	{
+	// i got tons of errors i dont know how to fix
 		for(int ie = 0; index < monsterList.size(); index++)
 		{
 			MarshmallowMonster currentMonster = monsterList.get(index);
